@@ -61,7 +61,7 @@ main {
 }
 
 #landing-image {
-    background-image: url(images/notext.jpg);
+    background-image: url('../images/notext.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,14 +152,12 @@ main {
 }
 
 .image-cont {
-    min-height: 60vh;
     width: 100%;
     background-color: var(--secondaryColor);
 }
 
 .posters {
     display: flex;
-    width: 100%;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -174,8 +172,7 @@ main {
     text-align: center;
 }
 
-.thumbnails ul {
-    list-style: none;
+.thumbnails {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -183,16 +180,16 @@ main {
     padding: 0;
     align-items: center;
     flex-wrap: wrap;
-    
 }
 
-.thumbnails ul img {
+.thumbnails img {
     border: 2px solid #ccc;
     transition: all 1s;
-    width: 20vw;
+    min-width: 0;
+    flex-basis: 25%;
 }
 
-.thumbnails ul img:hover {
+.thumbnails img:hover {
     transform: scale(1.5);
 }
 
@@ -204,12 +201,21 @@ footer {
 }
 
 @media screen and (min-width:600px) {
-    .thumbnails ul {
-        flex-wrap: nowrap;
+    #landing {
+        display: flex;
+        height: 100%;
     }
 
-    .thumbnails ul img {
-        max-width: 100%;
+    #landing-text {
+        height: 100vh;
+    }
+
+    #landing-image {
+        height: 100vh;
+    }
+
+    .thumbnails {
+        flex-wrap: nowrap;
     }
 
     .posters img {
